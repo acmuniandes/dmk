@@ -58,3 +58,51 @@
       </div>
     </div>
 <% end %>
+
+<script>
+    $('#loading-bar').hide();
+    $('#ad_title').bind('change',function(){
+        var data = {query: $('#ad_title').val() }
+        $('#results').empty();
+        $('#loading-bar').show();
+        $.getJSON('/get_images', data, function(obj)
+        {
+            $('#loading-bar').hide();
+            if (obj.d !== undefined)
+            {
+                $('#results').append(document.createElement('br'));
+                var items = obj.d.results;
+                for (var k = 0, len = items.length; k < len; k++)
+                {
+                    var item = items[k];
+                    showImageResult(item);
+                }
+                $('.img-rounded').click(data,function(){
+                    $('.img-rounded').removeClass('selected');
+                    $(this).addClass('selected');
+                    var src=$(this).attr('src')
+                    $('#ad_image').val(src)
+                });
+            }
+        });
+    });
+
+
+
+    // Shows one item of Image result.
+
+    function showImageResult(item)
+    {
+        var a = document.createElement('a');
+        a.href = item.MediaUrl;
+        // Create an image element and set its source to the thumbnail.
+        var i = document.createElement('img');
+        i.src = item.Thumbnail.MediaUrl;
+        // Make the object that the user clicks the thumbnail image.
+        $(i).addClass("img-rounded");
+        $(a).append(i);
+        // Append the anchor tag and paragraph with the title to the results div.
+        $('#results').append(i);
+    }
+
+</script>

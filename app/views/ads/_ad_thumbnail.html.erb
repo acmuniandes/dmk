@@ -6,6 +6,13 @@
     <div class="media-body">
       <h3 class="media-heading"> <%= ad.title %> </h3>
       <p> <%= ad.price %> </p>
+      <% if edit_button then %>
+          <div class="btn-group pull-right">
+            <%= link_to "editar", edit_ad_path(ad),:class=>"btn"  %>
+            <%= link_to "agregar imagenes", images_ad_path(ad),:class=>"btn"  %>
+          </div>
+
+      <% end %>
       <p class="label label-info"> <%= ad.category.name %></p>
     </div>
   </div>

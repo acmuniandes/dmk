@@ -13,6 +13,10 @@ class AdsController < ApplicationController
     end
   end
 
+  def images
+
+  end
+
   # GET /ads
   # GET /ads.json
   def search

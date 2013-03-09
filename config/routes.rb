@@ -1,19 +1,15 @@
 Libros::Application.routes.draw do
 
-  get "categories/index"
-
-  get "categories/show"
-
-  get "category/index"
-
-  get "category/show"
-
   get   '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
 
-  resources :ads
+  resources :ads do
+    member do
+      get 'images'
+    end
+  end
   get '/search',:to => "ads#search"
   get '/' ,:to => "ads#search"
   get 'get_images', :to=> "ads#get_images"

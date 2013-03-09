@@ -1,2 +1,14 @@
-<h1>Users#me</h1>
-<p>Find me in app/views/users/me.html.erb</p>
+<div class="row" >
+  <div class="span2">
+    <%= image_tag @user.get_fb_picture(100),:class=>"thumbnail img-rounded" %>
+  </div>
+  <div class="span8">
+    <h1>Hola <%= @user.name %> </h1>
+
+  </div>
+</div>
+<hr>
+<%= render_header "Mis anuncios", "aqui encuentras los anuncios que has creado" %>
+<% @user.ads.each do |ad| %>
+    <%= render_ad ad, true %>
+<% end %>
