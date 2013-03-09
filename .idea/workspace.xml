@@ -22,16 +22,7 @@
       <file leaf-file-name="ads_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ads_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="33" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/category.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="8" selection-start="700" selection-end="700" vertical-scroll-proportion="0.59731543">
+            <state line="74" column="16" selection-start="1743" selection-end="1743" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -40,7 +31,16 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ads/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="-1.25">
+            <state line="26" column="38" selection-start="973" selection-end="981" vertical-scroll-proportion="-3.9879518">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_navbar.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="53" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.8535156">
               <folding />
             </state>
           </provider>
@@ -67,7 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ads/new.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/ads_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/ads/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb" />
@@ -79,10 +78,11 @@
         <option value="$PROJECT_DIR$/app/views/widgets/fb/_load_api.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ads/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/ads_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/category.rb" />
+        <option value="$PROJECT_DIR$/app/views/ads/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
       </list>
     </option>
   </component>
@@ -430,6 +430,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libros" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libros" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -876,20 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="63" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-17.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ads/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ads/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="49" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-18.75">
@@ -899,16 +907,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ads_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/category.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="33" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0">
+        <state line="32" column="45" selection-start="705" selection-end="705" vertical-scroll-proportion="0.80536914">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/category.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ads_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="8" selection-start="700" selection-end="700" vertical-scroll-proportion="0.59731543">
+        <state line="74" column="16" selection-start="1743" selection-end="1743" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ads/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="38" selection-start="973" selection-end="981" vertical-scroll-proportion="-3.9879518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="53" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.8535156">
           <folding />
         </state>
       </provider>

@@ -15,27 +15,12 @@
             </p>
         <% end %>
         <ul class="nav">
-          <li>
-            <%=  link_to "/me" do %>
-                <i class="icon-user"></i> Perfil
-            <% end %>
-          </li>
-          <li>
-            <%=  link_to "/search" do %>
-                <i class="icon-search"></i> Buscar
-            <% end %>
-          </li>
-          <li>
-            <%=  link_to "/ads" do %>
-                <i class="icon-file"></i> Anuncio
-            <% end %>
-          </li>
           <%= render_if logged_in do %>
-            <li>
-              <%= link_to new_ad_path do %>
-                <i class="icon-plus"></i> Publicar Anuncio
-              <% end %>
-            </li>
+              <li>
+                <%= link_to new_ad_path do %>
+                    <i class="icon-plus"></i> Publicar Anuncio
+                <% end %>
+              </li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -43,9 +28,12 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                <% Category.get_top(5).each do |c| %>
+              <li class="nav-header">Categorias</li>
+              <% Category.get_top(5).each do |c| %>
                   <li> <%= link_to c.name, c %></li>
-                <% end %>
+              <% end %>
+              <li class="divider"></li>
+              <li><%= link_to "Todas",categories_path %></li>
             </ul>
           </li>
         </ul>
