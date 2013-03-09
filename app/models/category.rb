@@ -19,4 +19,24 @@ class Category < ActiveRecord::Base
   def Category.get_by_name
     return Category.all(:order=>:name)
   end
+
+  def Category.as_list
+    @categories = []
+    Category.all.each do |c|
+      @categories.push c.name
+    end
+    return @categories
+  end
+
+  def Category.get_id(name)
+    c =  Category.find_by_name(name);
+    if c then
+      return c.id;
+    else
+      c = Category.new(:name=>name);
+      c.save;
+      return c.id;
+    end
+  end
+
 end

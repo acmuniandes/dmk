@@ -1,5 +1,9 @@
 Libros::Application.routes.draw do
 
+  get "categories/index"
+
+  get "categories/show"
+
   get "category/index"
 
   get "category/show"

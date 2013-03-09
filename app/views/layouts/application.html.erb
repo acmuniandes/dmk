@@ -7,12 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render "widgets/fb/load_api" %>
 <%= render "layouts/navbar" %>
 
 <div class="container" style="margin-top: 55px;">
   <%= yield %>
 </div>
+
+<%= render_uservoice %>
 
 </body>
 </html>

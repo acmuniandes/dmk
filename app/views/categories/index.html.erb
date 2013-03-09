@@ -1,0 +1,10 @@
+<%= render_header  "Categorias", "esta es una lista de las categorias de anuncios" %>
+
+
+<ul class="nav nav-tabs nav-stacked">
+  <% @categories.each do |c|  %>
+     <li> <%= link_to c.name, c %> </li>
+  <% end %>
+</ul>
+
+

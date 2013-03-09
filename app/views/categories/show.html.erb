@@ -1,0 +1,5 @@
+<%= render_header @category.name, "Anuncios marcados dentro de esta categoria" %>
+
+<% @ads.each do |ad| %>
+    <%= render_ad ad %>
+<% end  %>

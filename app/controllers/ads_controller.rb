@@ -42,7 +42,7 @@ class AdsController < ApplicationController
   def new
     if session[:user_id] then
       @ad = Ad.new
-      @topCategories = Category.all
+      @topCategories = Category.as_list
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @ad }
@@ -63,6 +63,7 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(params[:ad])
     @ad.user_id=session[:user_id]
+    @ad.category_id= Category.get_id(params[:category])
     respond_to do |format|
       if @ad.save
         format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
