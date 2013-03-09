@@ -1,0 +1,60 @@
+
+
+
+<%= form_for @ad,:html=>{:class=>"form-horizontal" } do |f| %>
+    <% if @ad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+          <ul>
+            <% @ad.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="control-group">
+      <%= f.label :title,"Titulo ",:class=>"control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, :placeholder=>"ingresa un título para tu anuncio" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, "Descripción" ,:class=>"control-label"%>
+      <div class="controls">
+        <%= f.text_area :description,:size=>"5x5" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :image,:class=>"control-label" %>
+      <div class="controls">
+        <%= f.hidden_field :image %>
+        <div id="loading-bar" class="progress progress-striped active input-large">
+          <div class="bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <div id="results"></div>
+    </div>
+    <div class="control-group">
+      <%= f.label :price,:class=>"control-label" %>
+      <div class="controls">
+        <%= f.text_field :price %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :category_id ,:class=>"control-label"%>
+      <div class="control-group">
+        <%= f.number_field :category_id %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit :class=>"btn btn-primary" %>
+      </div>
+    </div>
+<% end %>

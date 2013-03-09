@@ -1,0 +1,45 @@
+<% logged_in = get_user_id(request) %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </a>
+      <%= link_to "DOMKEE" , "/" , :class=>"brand" %>
+      <div class="nav-collapse collapse">
+        <% if logged_in then  %>
+            <p class="navbar-text pull-right">Logged in as
+              <a href="/me" class="navbar-link"><%= User.find(logged_in).name  %></a>
+            </p>
+        <% end %>
+        <ul class="nav">
+          <li>
+            <%=  link_to "/me" do %>
+                <i class="icon-user"></i> Perfil
+            <% end %>
+          </li>
+          <li>
+            <%=  link_to "/search" do %>
+                <i class="icon-search"></i> Buscar
+            <% end %>
+          </li>
+          <li>
+            <%=  link_to "/ads" do %>
+                <i class="icon-file"></i> Anuncio
+            <% end %>
+          </li>
+          <%= render_if logged_in do %>
+            <li>
+              <%= link_to new_ad_path do %>
+                <i class="icon-plus"></i> Publicar Anuncio
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

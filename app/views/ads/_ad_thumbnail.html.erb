@@ -1,0 +1,10 @@
+<div class="well">
+  <div class="media">
+    <%= image_tag ad.image ,:class=>"media-object pull-left",:style => "max-height:100px" %>
+    <div class="media-body">
+      <h3 class="media-heading"> <%= ad.title %> </h3>
+      <p> <%= ad.price %> </p>
+      <p class="label label-info"> <%= ad.category.name %></p>
+    </div>
+  </div>
+</div>

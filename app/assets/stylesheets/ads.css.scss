@@ -1,0 +1,36 @@
+// Place all the styles related to the Ads controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$selectedBlue:#5f6f83;
+
+.search-box{
+  text-align: center;
+  margin-top: 20%;
+  p{
+    font-size: 18px;
+  }
+  h1{
+    font-size: 60px;
+    text-shadow:2px 2px rgb(166, 160, 78);
+  }
+}
+
+.controls{
+  input{
+    width: 210px;
+  }
+}
+
+.img-rounded{
+  height: 120px;
+  margin: 2px;
+  border: 2px solid #FEFEFE;
+  &:hover{
+    border: 2px solid $selectedBlue;
+  }
+}
+
+.selected{
+  border: 2px solid $selectedBlue;
+}
+
