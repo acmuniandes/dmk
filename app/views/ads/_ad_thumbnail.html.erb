@@ -1,6 +1,8 @@
-<div class="well">
+<div class="well well-small">
   <div class="media">
-    <%= image_tag ad.image ,:class=>"media-object pull-left",:style => "max-height:100px" %>
+    <a href="<%= ad_path(ad) %>">
+      <%= image_tag ad.image ,:class=>"media-object pull-left thumbnail",:style => "max-height:100px; margin-right:5px" %>
+    </a>
     <div class="media-body">
       <h3 class="media-heading"> <%= ad.title %> </h3>
       <p> <%= ad.price %> </p>

@@ -17,7 +17,7 @@ class AdsController < ApplicationController
   # GET /ads.json
   def search
     if (params[:query] and params[:query].size  > 0)
-      @results = Ad.where("#{:title} LIKE '%#{params[:query]}%' OR #{:description} LIKE '%#{:query}%'")
+      @ads = Ad.where("#{:title} LIKE '%#{params[:query]}%' OR #{:description} LIKE '%#{:query}%'")
     end
     @topCategories = Category.get_top(20)
     respond_to do |format|
@@ -71,6 +71,8 @@ class AdsController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @ad.errors, status: :unprocessable_entity }
+
+
       end
     end
   end
