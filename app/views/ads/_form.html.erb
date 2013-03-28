@@ -44,14 +44,14 @@
         <div class="control-group">
           <%= f.label :price,"Precio",:class=>"control-label" %>
           <div class="controls">
-            <%= f.text_field :price %>
+            <%= f.text_field :price,:placeholder=>"Ej: '200000' o '50000 por clase'" %>
           </div>
         </div>
 
         <div class="control-group">
           <%= f.label :category,"Categoría" ,:class=>"control-label"%>
           <div class="controls">
-            <input name="category" autocomplete="off" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="<%= @topCategories %>">
+            <input placeholder="Ej. 'libros' o 'arriendos' " name="category" autocomplete="off" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="<%= @topCategories %>">
           </div>
         </div>
         <div class="control-group">

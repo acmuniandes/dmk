@@ -16,10 +16,9 @@
 
 </div>
 <% if @ads then%>
-    <hr id="hr">
-
 
     <div class="row">
+      <h4>Resultados para "<span class="muted"><%= request.params[:query] %></span>"</h4>
       <% @ads.each do |ad| %>
           <%= render_ad ad %>
       <% end %>
@@ -28,7 +27,8 @@
     <script>
 
         var n = $(document).height();
-        $('html, body').animate({ scrollTop: $('#search-panel').height() },500);
+
+        $('.search-box').animate({ marginTop: 10, marginBottom:10},500);
 
     </script>
 
