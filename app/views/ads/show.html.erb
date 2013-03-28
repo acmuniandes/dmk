@@ -23,11 +23,13 @@
     <p class="label label-info">
       <%= @ad.category.name %>
     </p>
+    <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
   </div>
 </div>
 <hr>
 <div class="row">
-    <%= render_disqus (request.fullpath) %>
-</div>
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+    <div class="span8 offset2" >
+      <%= render_disqus (request.fullpath) %>
+    </div>
+</div> |
+<%= link_to 'Back', "/" %>
