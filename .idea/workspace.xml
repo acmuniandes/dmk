@@ -23,15 +23,54 @@
         <entry file="file://$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.0">
+              <folding>
+                <marker date="1364576671000" expanded="true" signature="59:716" placeholder="..." />
+                <marker date="1364576671000" expanded="true" signature="81:709" placeholder="..." />
+                <marker date="1364576671000" expanded="true" signature="115:247" placeholder="..." />
+                <marker date="1364576671000" expanded="true" signature="276:700" placeholder="..." />
+                <marker date="1364576671000" expanded="true" signature="439:609" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ads/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="13" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-19.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/ads/edit.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/images/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="37" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.73568285">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/images/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="-0.625">
+              <folding>
+                <marker date="1364526788000" expanded="true" signature="134:638" placeholder="..." />
+                <marker date="1364526788000" expanded="true" signature="251:389" placeholder="..." />
+                <marker date="1364526788000" expanded="true" signature="319:376" placeholder="..." />
+                <marker date="1364526788000" expanded="true" signature="413:559" placeholder="..." />
+                <marker date="1364526788000" expanded="true" signature="492:546" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="27" selection-start="172" selection-end="172" vertical-scroll-proportion="2.1875">
               <folding />
             </state>
           </provider>
@@ -67,11 +106,11 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_alerts.html.erb" />
         <option value="$PROJECT_DIR$/app/models/ad.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/ads/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/ads_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ads/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/ads/show.html.erb" />
       </list>
     </option>
   </component>
@@ -83,9 +122,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1680" />
-    <option name="height" value="1026" />
+    <option name="x" value="873" />
+    <option name="y" value="147" />
+    <option name="width" value="512" />
+    <option name="height" value="496" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -691,18 +731,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1680" height="1026" extended-state="6" />
+    <frame x="873" y="147" width="512" height="496" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3354735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1582822" sideWeight="0.80994475" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5584416" sideWeight="0.57" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19005525" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -767,11 +807,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/categories/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="-0.625" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/categories/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="94" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
@@ -794,20 +829,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="25" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/images/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -867,7 +888,13 @@
     <entry file="file://$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1364576671000" expanded="true" signature="59:716" placeholder="..." />
+            <marker date="1364576671000" expanded="true" signature="81:709" placeholder="..." />
+            <marker date="1364576671000" expanded="true" signature="115:247" placeholder="..." />
+            <marker date="1364576671000" expanded="true" signature="276:700" placeholder="..." />
+            <marker date="1364576671000" expanded="true" signature="439:609" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -894,7 +921,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ads/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="37" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.73568285">
+        <state line="45" column="13" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-19.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/images/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/images/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="-0.625">
+          <folding>
+            <marker date="1364526788000" expanded="true" signature="134:638" placeholder="..." />
+            <marker date="1364526788000" expanded="true" signature="251:389" placeholder="..." />
+            <marker date="1364526788000" expanded="true" signature="319:376" placeholder="..." />
+            <marker date="1364526788000" expanded="true" signature="413:559" placeholder="..." />
+            <marker date="1364526788000" expanded="true" signature="492:546" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="27" selection-start="172" selection-end="172" vertical-scroll-proportion="2.1875">
           <folding />
         </state>
       </provider>
