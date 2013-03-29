@@ -9,7 +9,7 @@
       <% if edit_button then %>
           <div class="btn-group pull-right">
             <%= link_to "editar", edit_ad_path(ad),:class=>"btn"  %>
-            <%= link_to "agregar imagenes", images_ad_path(ad),:class=>"btn"  %>
+            <%= link_to "agregar imagenes", new_ad_image_path(ad),:class=>"btn"  %>
           </div>
 
       <% end %>

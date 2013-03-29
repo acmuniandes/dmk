@@ -1,7 +1,8 @@
+<%= render_header "Mis anuncios", "aqui encuentras los anuncios que has creado","icon-book" %>
+
 <div class="container">
   <div class="row" >
     <div class="span8">
-      <%= render_header "Mis anuncios", "aqui encuentras los anuncios que has creado" %>
       <% @user.ads.each do |ad| %>
           <%= render_ad ad, true %>
       <% end %>

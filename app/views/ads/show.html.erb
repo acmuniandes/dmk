@@ -1,6 +1,5 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
+  <br>
   <div class="row">
 
     <div class="span4">
@@ -16,23 +15,23 @@
 
       <p>
         <b>Precio:</b>
-        <span class="badge badge-warning"><%= @ad.price %></span>
+        <span class="badge badge-warning">$<%= @ad.price %></span>
 
       </p>
+      <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
 
 
       <p class="label label-info">
-        <%= @ad.category.name %>
+        <i class="icon-tag"></i><%= @ad.category.name %>
       </p>
-      <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
-    </div>
+      </div>
   </div>
   <hr>
   <div class="row">
     <div class="span8 offset2" >
       <%= render_disqus (request.fullpath) %>
     </div>
-  </div> |
+  </div>
   <%= link_to 'Back', "/" %>
 
 </div>

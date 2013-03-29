@@ -1,0 +1,21 @@
+<%= render_header("Añadir imagen","añade una nueva imagen para tu anuncio", "icon-camera-retro icon-large") %>
+
+<div class="container">
+
+  <%= form_tag( {:action => "create"},:multipart=>"true",:class => "form-horizontal") do %>
+      <div class="row">
+        <div class="span3">Imagen</div>
+        <div class="span9">
+          <%= file_field_tag :dataFile %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">Titulo (opcional)</div>
+        <div class="span9">
+          <%= text_field_tag :title %>
+        </div>
+      </div>
+      <%= submit_tag "enviar",:class=>"btn btn-primary"  %>
+  <% end %>
+</div>
+

@@ -20,8 +20,8 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def search
-    if (params[:query] and params[:query].size  > 0)
-      @ads = Ad.where("#{:title} LIKE '%#{params[:query]}%' OR #{:description} LIKE '%#{:query}%'")
+    if params[:query] and params[:query].size  > 0 then
+      @ads = Ad.search(params[:query])
     end
     @topCategories = Category.get_top(20)
     respond_to do |format|
@@ -70,7 +70,8 @@ class AdsController < ApplicationController
     @ad.category_id= Category.get_id(params[:category])
     respond_to do |format|
       if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+        flash[:success]="Anuncio exitosamente creado"
+        format.html { redirect_to @ad }
         format.json { render json: @ad, status: :created, location: @ad }
       else
         format.html { render action: "new" }
