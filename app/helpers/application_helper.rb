@@ -8,8 +8,8 @@ module ApplicationHelper
     render "widgets/uservoice"
   end
 
-  def render_header(title,subtitle)
-    render :partial => "layouts/header" , :locals => {:title=>title, :subtitle => subtitle}
+  def render_header(title,subtitle, icon_name="")
+    render :partial => "layouts/header" , :locals => {:title=>title, :subtitle => subtitle, :icon_name=> icon_name}
   end
 
   def render_if(condition,&code)

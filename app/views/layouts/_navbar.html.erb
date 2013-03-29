@@ -1,4 +1,4 @@
-<% logged_in = get_user_id(request) %>
+<% user_id = get_user_id(request) %>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -9,22 +9,46 @@
       </a>
       <%= link_to "DOMKEE" , "/" , :class=>"brand" %>
       <div class="nav-collapse collapse">
-        <% if logged_in then  %>
-            <p class="navbar-text pull-right">Logged in as
-              <a href="/me" class="navbar-link"><%= User.find(logged_in).name  %></a>
-            </p>
-        <% end %>
+
         <ul class="nav">
-          <%= render_if logged_in do %>
+          <% if user_id then  %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon-user"></i>
+                  <%= User.find(user_id).name %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to "/me" do%>
+                        <i class="icon-book"></i> mis anuncios
+                    <%end%>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "/logout" do%>
+                        <i class="icon-off"></i> logout
+                    <%end%>
+                  </li>
+                </ul>
+              </li>
+          <% else %>
+            <li>
+              <%= link_to "auth/facebook" do %>
+                  <i class="icon-facebook-sign"></i> Log-in
+              <% end %>
+            </li>
+          <% end %>
+          <%= render_if user_id do %>
               <li>
                 <%= link_to new_ad_path do %>
-                    <i class="icon-plus"></i> Publicar Anuncio
+                    <i class="icon-pencil"></i> Publicar Anuncio
                 <% end %>
               </li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Anuncios
+              <i class="icon-book"></i>Anuncios
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">

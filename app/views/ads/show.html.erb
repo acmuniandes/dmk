@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<div class="row">
+  <div class="row">
 
-  <div class="span4">
-    <%= image_tag @ad.image %>
+    <div class="span4">
+      <%= image_tag @ad.image %>
+    </div>
+    <div class="span8">
+      <h2><%= @ad.title %></h2>
+
+      <p>
+        <b>Descripcion:</b>
+        <%= @ad.description %>
+      </p>
+
+      <p>
+        <b>Precio:</b>
+        <span class="badge badge-warning"><%= @ad.price %></span>
+
+      </p>
+
+
+      <p class="label label-info">
+        <%= @ad.category.name %>
+      </p>
+      <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
+    </div>
   </div>
-  <div class="span8">
-    <h2><%= @ad.title %></h2>
-
-    <p>
-      <b>Descripcion:</b>
-      <%= @ad.description %>
-    </p>
-
-    <p>
-      <b>Precio:</b>
-      <span class="badge badge-warning"><%= @ad.price %></span>
-
-    </p>
-
-
-    <p class="label label-info">
-      <%= @ad.category.name %>
-    </p>
-    <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
-  </div>
-</div>
-<hr>
-<div class="row">
+  <hr>
+  <div class="row">
     <div class="span8 offset2" >
       <%= render_disqus (request.fullpath) %>
     </div>
-</div> |
-<%= link_to 'Back', "/" %>
+  </div> |
+  <%= link_to 'Back', "/" %>
+
+</div>

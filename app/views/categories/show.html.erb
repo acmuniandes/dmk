@@ -1,5 +1,7 @@
-<%= render_header @category.name, "Anuncios marcados dentro de esta categoria" %>
+<div class="container">
+  <%= render_header @category.name, "Anuncios marcados dentro de esta categoria", "icon-tag" %>
 
-<% @ads.each do |ad| %>
-    <%= render_ad ad %>
-<% end  %>
+  <% @ads.each do |ad| %>
+      <%= render_ad ad %>
+  <% end  %>
+</div>

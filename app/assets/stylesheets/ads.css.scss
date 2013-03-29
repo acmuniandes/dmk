@@ -5,13 +5,14 @@ $selectedBlue:#5f6f83;
 
 .search-box{
   text-align: center;
-  margin-top: 20%;
+  margin-top: 10%;
   p{
     font-size: 18px;
   }
   h1{
     font-size: 60px;
-    text-shadow:2px 2px rgb(166, 160, 78);
+    text-shadow:2px 2px #FEFEFE;
+    font-weight: 300;
   }
 }
 
@@ -22,7 +23,7 @@ $selectedBlue:#5f6f83;
 }
 
 .img-rounded{
-  height: 120px;
+  min-height: 120px;
   margin: 2px;
   border: 2px solid #FEFEFE;
   &:hover{
