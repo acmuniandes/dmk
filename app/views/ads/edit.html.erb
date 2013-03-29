@@ -1,9 +1,57 @@
+<%= render_header "Editar","Aquí puedes modificar tu anuncio", "icon-edit" %>
 <div class="container">
-  <h1>Editing ad</h1>
 
-  <%= render 'form' %>
 
-  <%= link_to 'Show', @ad %> |
-  <%= link_to 'Back', ads_path %>
+  <div class="row">
+    <div class="span12">
+
+
+
+      <%= form_for @ad,:html=>{:class=>"form-horizontal" } do |f| %>
+          <% if @ad.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+                <ul>
+                  <% @ad.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+
+          <div class="control-group">
+            <%= f.label :title,"Titulo ",:class=>"control-label" %>
+            <div class="controls">
+              <%= f.text_field :title, :placeholder=>"ingresa un título",:class=>"input-xxlarge" %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <%= f.label :description, "Descripción" ,:class=>"control-label"%>
+            <div class="controls">
+              <%= f.text_area :description,:size=>"5x5",:placeholder=>"Agrega una corta descripcción para tu anuncio." %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <%= f.label :price,"Precio",:class=>"control-label" %>
+            <div class="controls">
+              <%= f.text_field :price,:placeholder=>"Ej: '200000' o '50000 por clase'" %>
+            </div>
+          </div>
+
+
+          <div class="control-group">
+            <div class="controls">
+              <%= f.submit "Guardar", :class=>"btn btn-primary" %>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+
+  </div>
 
 </div>
