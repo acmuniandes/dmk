@@ -3,9 +3,16 @@
   <div class="row">
 
     <div class="span4">
-      <%= image_tag @ad.image %>
+      <%= image_tag @ad.image,:class=> "thumbnail" %>
       <% @ad.images.each do |i|  %>
-        <%= image_tag i.url %>
+
+        <%= render_modal_link i.id do %>
+          <%= image_tag "/#{i.url}" %>
+        <% end %>
+        <%= render_modal @ad.title, i.id do %>
+            <%= image_tag "/#{i.url}", :style=>"margin-left:auto;margin-right:auto;" %>
+            <p><%= i.title %></p>
+        <% end  %>
       <% end %>
     </div>
     <div class="span8">
@@ -21,7 +28,7 @@
         <span class="badge badge-warning">$<%= @ad.price %></span>
 
       </p>
-      <p><%= render_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
+      <p><%= render_simple_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
 
 
       <p class="label label-info">

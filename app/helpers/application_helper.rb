@@ -22,8 +22,16 @@ module ApplicationHelper
   # btn_text: button's text
   # title: the title of the modal
   # content: the modal's content wrapped inside <p></p> tags
-  def render_modal(btn_text, title, content)
+  def render_simple_modal(btn_text, title, content)
     render :partial => "widgets/bootstrap/modal_simple" , :locals => {:title => title, :content => content, :btn_text=>btn_text}
+  end
+
+  def render_modal(title, modal_id, &block)
+    render :partial => "widgets/bootstrap/modal" , :locals => {:title => title,:modal_id=>modal_id,:content=>capture(&block)}
+  end
+
+  def render_modal_link(modal_id,&block)
+    render :partial =>  "widgets/bootstrap/modal_link", :locals => {:modal_id=>modal_id, :content=>capture(&block)}
   end
 
 end

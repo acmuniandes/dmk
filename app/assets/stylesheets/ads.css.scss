@@ -1,6 +1,7 @@
 // Place all the styles related to the Ads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap_and_overrides.css.less";
 $selectedBlue:#5f6f83;
 
 .search-box{
@@ -33,5 +34,14 @@ $selectedBlue:#5f6f83;
 
 .selected{
   border: 2px solid $selectedBlue;
+}
+
+.tiny-image-link{
+  @extend .thumbnail;
+  float: left;
+  max-height: 50px;
+  img{
+    max-height: 50px;
+  }
 }
 
