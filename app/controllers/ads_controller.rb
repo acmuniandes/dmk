@@ -66,6 +66,9 @@ class AdsController < ApplicationController
   # POST /ads.json
   def create
     @ad = Ad.new(params[:ad])
+    if !@ad.image || @ad.image==""
+      @ad.image = "http://placehold.it/400x400"
+    end
     @ad.user_id=session[:user_id]
     @ad.category_id= Category.get_id(params[:category])
     respond_to do |format|
