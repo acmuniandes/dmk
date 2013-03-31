@@ -1,18 +1,20 @@
-<% if flash[:notice] then %>
-    <div class="alert">
-      <%= flash[:notice]%>
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
-    </div>
-<% end %>
-<% if flash[:success] then %>
-    <div class="alert success">
-      <%= flash[:success]%>
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
-    </div>
-<% end %>
-<% if flash[:error] then %>
-    <div class="alert alert-error">
-      <%= flash[:error]%>
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
-    </div>
-<% end %>
+<div style="position: fixed; top: 40px; ">
+  <% if flash[:notice] then %>
+      <div class="alert">
+        <%= flash[:notice]%>
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+  <% end %>
+  <% if flash[:success] then %>
+      <div class="alert alert-success">
+        <%= flash[:success]%>
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+  <% end %>
+  <% if flash[:error] then %>
+      <div class="alert alert-error">
+        <%= flash[:error]%>
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+  <% end %>
+</div>

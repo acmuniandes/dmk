@@ -6,13 +6,13 @@
       <%= image_tag @ad.image,:class=> "thumbnail" %>
       <% @ad.images.each do |i|  %>
 
-        <%= render_modal_link i.id do %>
-          <%= image_tag "/#{i.url}" %>
-        <% end %>
-        <%= render_modal @ad.title, i.id do %>
-            <%= image_tag "/#{i.url}", :style=>"margin-left:auto;margin-right:auto;" %>
-            <p><%= i.title %></p>
-        <% end  %>
+          <%= render_modal_link i.id do %>
+              <%= image_tag "/#{i.url}" %>
+          <% end %>
+          <%= render_modal @ad.title, i.id do %>
+              <%= image_tag "/#{i.url}", :style=>"margin-left:auto;margin-right:auto;" %>
+              <p><%= i.title %></p>
+          <% end  %>
       <% end %>
     </div>
     <div class="span8">
@@ -24,17 +24,25 @@
       </p>
 
       <p>
-        <b>Precio:</b>
         <span class="badge badge-warning">$<%= @ad.price %></span>
-
+          <p class="label label-info">
+            <i class="icon-tag"></i><%= @ad.category.name %>
+          </p>
       </p>
-      <p><%= render_simple_modal("Contactar anunciante","Contactar", "Para contactar al anunciante envíale un correo a: #{@ad.user.email}") %></p>
+      <%= render_modal_link "contact_modal","btn btn-primary" do %>
+        <i class="icon-envelope"></i> Contactar anunciante
+      <% end %>
+      <%= render_modal "Contacto", "contact_modal" do %>
+        <p>¿Estas interesado en el anuncio? Envíale un mensaje al dueño</p>
 
+          <div class="input-append">
+            <input class="span4" id="appendedInputButton" type="text">
+            <button id="btnSend" class="btn" type="button" data-dismiss="modal">enviar</button>
+          </div>
 
-      <p class="label label-info">
-        <i class="icon-tag"></i><%= @ad.category.name %>
-      </p>
-      </div>
+      <% end %>
+
+    </div>
   </div>
   <hr>
   <div class="row">
@@ -45,3 +53,13 @@
   <%= link_to 'Back', "/" %>
 
 </div>
+
+<script>
+
+    $('#btnSend').click(function(){
+        var text = $('#appendedInputButton').val();
+        $.post("send_email",{message: text, id: <%=@ad.id %>}, function(res){
+            alert(res);
+        });
+    });
+</script>

@@ -1,0 +1,24 @@
+<a href="#" onclick="login()">
+  <i class="icon-facebook-sign"></i> login
+</a>
+<script>
+
+    function login() {
+        FB.login(function(response) {
+            if (response.authResponse) {
+                FB.api('/me', function(response) {
+
+                    var uid = response.id
+                    var name = response.first_name
+                    var email = response.email
+                    $.post('client_auth',{uid: uid, name: name, email: email}, function(){
+                        window.location = '/me'
+                    });
+                });
+            } else {
+                alert("Login failed");
+            }
+        },{scope: 'email'});
+    }
+
+</script>

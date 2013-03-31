@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def render_if(condition,&code)
     if condition then
-       return capture(&code)
+      return capture(&code)
     end
   end
 
@@ -30,8 +30,11 @@ module ApplicationHelper
     render :partial => "widgets/bootstrap/modal" , :locals => {:title => title,:modal_id=>modal_id,:content=>capture(&block)}
   end
 
-  def render_modal_link(modal_id,&block)
-    render :partial =>  "widgets/bootstrap/modal_link", :locals => {:modal_id=>modal_id, :content=>capture(&block)}
+  def render_modal_link(modal_id, class_name="tiny-image-link",&block)
+    options={:class_name=>class_name}
+    options.merge!(:modal_id=>modal_id)
+    options.merge!(:content=>capture(&block))
+    render :partial =>  "widgets/bootstrap/modal_link", :locals => options
   end
 
 end

@@ -151,4 +151,13 @@ class AdsController < ApplicationController
 
   end
 
+  def send_email
+    message = params[:message]
+    ad = Ad.find(params[:id])
+    user_sender = User.find(session[:user_id])
+    user_receiver = User.find(ad.user)
+    UserMailer.send_email(user_sender, user_receiver,ad,message).deliver;
+    render text: "mensaje enviado exitosamente"
+  end
+
 end

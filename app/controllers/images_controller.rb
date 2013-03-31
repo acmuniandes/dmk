@@ -43,7 +43,7 @@ class ImagesController < ApplicationController
 
     uploaded_io = params[:dataFile]
 
-    path = Rails.root.join('public', 'uploads', uploaded_io.original_filename);
+    path = Rails.root.join('public', 'uploads',  Time.now.to_f.to_s << uploaded_io.original_filename);
     File.open(path, 'w:ASCII-8BIT') do |file|
       file.write(uploaded_io.read)
 
@@ -51,7 +51,7 @@ class ImagesController < ApplicationController
     realPath = File.absolute_path(path).split("public/")[1]
     @image.url= realPath
     if @image.save then
-      flash[:notice]="la fuente fue exitosamente creada"
+      flash[:success]="Imagen subida exitosamente"
     else
       flash[:error]="error agregando imagen"
     end

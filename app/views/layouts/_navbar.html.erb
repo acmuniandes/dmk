@@ -33,11 +33,9 @@
                 </ul>
               </li>
           <% else %>
-            <li>
-              <%= link_to "auth/facebook" do %>
-                  <i class="icon-facebook-sign"></i> Log-in
-              <% end %>
-            </li>
+              <li>
+                <%= render "layouts/fb_client_login" %>
+              </li>
           <% end %>
           <%= render_if user_id do %>
               <li>

@@ -7,8 +7,14 @@ Libros::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
+  post '/client_auth', :to => "sessions#client_auth"
 
   resources :ads do
+
+    collection do
+      post "send_email"
+    end
+
     resources :images
   end
   get '/search',:to => "ads#search"

@@ -1,0 +1,15 @@
+<h2>Hola <%= @user_receiver.name %></h2>
+<p>El usuario <i><%=@user_sender.name %></i>
+  te ha enviado un mensaje sobre tu anuncio:<%= link_to @ad.title, "http://0.0.0.0:3000" << ad_path(@ad) %> </p>
+<div style="font: 14px/22px normal helvetica, sans-serif;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        padding-left: 15px;
+        border-left: 3px solid #ccc;">
+
+  <p><%= @message %></p>
+</div>
+<p>Para contactar a <i><%=@user_sender.name %></i> puedes enviarle un mensaje a <%= @user_sender.email %></p>
+<small>Por favor no respondas a este correo, es auto generado por un computador y no será contestado. Si quieres
+contactar al usuario que está interesado en tu anuncio envíale un correo a <%= @user_sender.email %></small>

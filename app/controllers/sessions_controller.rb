@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
     if @authorization
       user_id = @authorization.user.id
-      #render :text => "Welcome back #{@authorization.user.nombre}! You have already signed up. "
       session[:user_id] = user_id
       redirect_to("/me")
     else
@@ -26,7 +25,6 @@ class SessionsController < ApplicationController
 
     end
 
-
   end
 
   def failure
@@ -35,7 +33,32 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    render :text => "You've logged out!"
+    flash[:notice]= "log-out successful :)"
+    redirect_to("/");
+  end
+
+  #
+  # TODO this method is considered insecure and will be eventually terminated. It is therefore deprecated
+  # DEPRECATED
+  # authenticates a user with params uid, name, email
+  def client_auth
+    provider = "facebook"
+    uid = params[:uid]
+    @authorization = Authorization.find_by_provider_and_uid(provider,uid)
+    if @authorization
+      user_id = @authorization.user.id
+      session[:user_id] = user_id
+      redirect_to('/me')
+    else
+      user_name = params[:name]
+      user_email = params[:email]
+      user= User.new(:name=>user_name, :email => user_email)
+      user.authorizations.build :provider => provider, :uid => uid
+      user.save
+      user_id = user.id
+      session[:user_id] = user_id
+      redirect_to('/me');
+    end
   end
 
 end
