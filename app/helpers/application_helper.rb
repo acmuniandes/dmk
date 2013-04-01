@@ -37,4 +37,17 @@ module ApplicationHelper
     render :partial =>  "widgets/bootstrap/modal_link", :locals => options
   end
 
+  def get_app_id
+    if Rails.env == "development"
+      153647051469227
+    else
+      327891523972361
+    end
+  end
+
+  def render_fb_load_api
+      app_id = get_app_id()
+     render :partial => "widgets/fb/load_api",:locals => {:app_id=>app_id}
+  end
+
 end

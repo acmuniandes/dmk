@@ -1,4 +1,8 @@
-<%= render_header "Mis anuncios", "aqui encuentras los anuncios que has creado","icon-book" %>
+<% if @user.get_fb_id == 667535548 then
+     icon = "icon-heart"
+   else icon = "icon-user"
+   end %>
+<%= render_header "Mis anuncios", "aqui encuentras los anuncios que has creado",icon %>
 
 <div class="container">
   <div class="row" >

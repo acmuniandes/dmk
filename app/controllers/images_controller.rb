@@ -51,9 +51,9 @@ class ImagesController < ApplicationController
     realPath = File.absolute_path(path).split("public/")[1]
     @image.url= realPath
     @image.ad_id = params[:ad_id]
-    #@image.save
+    @image.save
     flash[:success]="Imagen subida exitosamente"
-    redirect_to ads_path
+    redirect_to ad_path(@image.ad_id)
   end
 
   # PUT /images/1

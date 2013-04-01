@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
     return "https://graph.facebook.com/#{authorizations.first.uid}/picture?width=#{width}"
   end
 
+  def get_fb_id
+    return authorizations.first.uid
+  end
+
 end
