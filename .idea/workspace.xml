@@ -46,10 +46,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_navbar.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_navbar.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="104" selection-start="592" selection-end="592" vertical-scroll-proportion="0.46478873">
+            <state line="11" column="104" selection-start="592" selection-end="592" vertical-scroll-proportion="-6.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="21" selection-start="51" selection-end="51" vertical-scroll-proportion="0.053521127">
               <folding />
             </state>
           </provider>
@@ -107,7 +116,6 @@
         <option value="$PROJECT_DIR$/app/models/ad.rb" />
         <option value="$PROJECT_DIR$/app/views/ads/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/widgets/fb/_load_api.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/controllers/ads_controller.rb" />
@@ -117,6 +125,7 @@
         <option value="$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -759,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="222" selection-end="222" vertical-scroll-proportion="0.23943663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="20" selection-start="1396" selection-end="1396" vertical-scroll-proportion="1.1748072">
@@ -845,7 +847,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="104" selection-start="592" selection-end="592" vertical-scroll-proportion="0.46478873">
+        <state line="11" column="104" selection-start="592" selection-end="592" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="21" selection-start="51" selection-end="51" vertical-scroll-proportion="0.053521127">
           <folding />
         </state>
       </provider>
