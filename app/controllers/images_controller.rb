@@ -36,26 +36,24 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @ad = Ad.find(params[:ad_id])
-    @image = @ad.images.new
+
+    @image = Image.new
 
     @image.title = params[:title]
 
     uploaded_io = params[:dataFile]
 
-    path = Rails.root.join('public', 'uploads',  Time.now.to_f.to_s << uploaded_io.original_filename);
+    path = Rails.root.join('public', 'uploads',  Time.now.to_f.to_s << uploaded_io.original_filename)
     File.open(path, 'w:ASCII-8BIT') do |file|
       file.write(uploaded_io.read)
 
     end
     realPath = File.absolute_path(path).split("public/")[1]
     @image.url= realPath
-    if @image.save then
-      flash[:success]="Imagen subida exitosamente"
-    else
-      flash[:error]="error agregando imagen"
-    end
-    redirect_to @ad
+    @image.ad_id = params[:ad_id]
+    #@image.save
+    flash[:success]="Imagen subida exitosamente"
+    redirect_to ads_path
   end
 
   # PUT /images/1
