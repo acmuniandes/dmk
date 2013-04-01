@@ -5,12 +5,21 @@
       <%= image_tag ad.image ,:class=>"media-object pull-left thumbnail",:style => "max-height:100px; margin-right:5px" %>
     </a>
     <div class="media-body">
-      <h3 class="media-heading"> <%= ad.title %> </h3>
+      <h3 class="media-heading">
+        <%= link_to ad.title, ad %>
+      </h3>
       <p> <%= ad.price %> </p>
       <% if edit_button then %>
           <div class="btn-group pull-right">
-            <%= link_to "editar", edit_ad_path(ad),:class=>"btn"  %>
-            <%= link_to "agregar imagenes", new_ad_image_path(ad),:class=>"btn"  %>
+            <%= link_to  ad,:confirm=>"Estas seguro que deseas remover tu anuncio?",:method=>:delete, :class=>"btn" do %>
+                <i class="icon-trash"></i> remover
+            <% end %>
+            <%= link_to edit_ad_path(ad),:class=>"btn" do  %>
+                <i class="icon-edit"></i> editar
+            <% end %>
+            <%= link_to new_ad_image_path(ad),:class=>"btn btn-success" do %>
+                <i class="icon-camera"></i> agregar imagenes
+            <%end %>
           </div>
 
       <% end %>

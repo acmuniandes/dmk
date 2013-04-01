@@ -105,7 +105,7 @@ class AdsController < ApplicationController
     @ad.destroy
 
     respond_to do |format|
-      format.html { redirect_to ads_url }
+      format.html { redirect_to "/me" }
       format.json { head :no_content }
     end
   end

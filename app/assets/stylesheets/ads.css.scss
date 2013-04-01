@@ -23,14 +23,7 @@ $selectedBlue:#5f6f83;
   }
 }
 
-.img-rounded{
-  min-height: 120px;
-  margin: 2px;
-  border: 2px solid #FEFEFE;
-  &:hover{
-    border: 2px solid $selectedBlue;
-  }
-}
+
 
 .selected{
   border: 2px solid $selectedBlue;
