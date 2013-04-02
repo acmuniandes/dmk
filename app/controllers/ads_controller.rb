@@ -43,7 +43,7 @@ class AdsController < ApplicationController
   def new
     if session[:user_id] then
       @ad = Ad.new
-      @topCategories = Category.as_list
+      @categories = Category.all
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @ad }
@@ -67,7 +67,7 @@ class AdsController < ApplicationController
       @ad.image = "http://placehold.it/400x400"
     end
     @ad.user_id=session[:user_id]
-    @ad.category_id= Category.get_id(params[:category])
+    @ad.category_id= params[:category]
     respond_to do |format|
       if @ad.save
         flash[:success]="Anuncio exitosamente creado"
