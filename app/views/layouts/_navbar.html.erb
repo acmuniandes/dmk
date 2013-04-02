@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <%= link_to "DOMKEE" , "/" , :class=>"brand" %>
+      <%= link_to "/" , :class=>"brand" do %>
+          DOMKEE <small style="font-size: 15px;"> beta </small>
+      <% end %>
       <%= link_to "http://acm.uniandes.edu.co" do %>
           <%= image_tag "acm.png" ,:class=>"pull-right",:style=>"margin-top: 10px",:alt=>"ACM - UNIANDES" %>
       <%end%>
