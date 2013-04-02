@@ -27,16 +27,15 @@
         <b>Descripcion:</b>
         <%= @ad.description %>
       </p>
-
-      <p>
-        <span class="badge badge-warning"><%= number_to_currency(@ad.price) %></span>
-          <p class="label label-info">
-            <i class="icon-tag"></i><%= @ad.category.name %>
-          </p>
+      <span class="badge badge-warning"><%= number_to_currency(@ad.price) %></span>
+      <p class="label label-info">
+        <i class="icon-tag"></i><%= @ad.category.name %>
       </p>
+      <br>
       <%= render_modal_link "contact_modal","btn btn-primary" do %>
         <i class="icon-envelope"></i> Contactar anunciante
       <% end %>
+
       <%= render_modal "Contacto", "contact_modal" do %>
         <p>¿Estas interesado en el anuncio? Envíale un mensaje al dueño</p>
 
@@ -47,6 +46,12 @@
 
       <% end %>
 
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="span12">
+      <%= render_standard_like("http://clasificados.uniandes.edu.co"<<ad_path(@ad)) %>
     </div>
   </div>
   <hr>
