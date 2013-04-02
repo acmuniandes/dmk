@@ -28,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_footer.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="115" selection-start="780" selection-end="791" vertical-scroll-proportion="-9.375">
+            <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="0.5586592">
               <folding />
             </state>
           </provider>
@@ -64,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ads/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="36" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.6272727">
+            <state line="53" column="36" selection-start="1906" selection-end="1906" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
@@ -132,9 +132,9 @@
         <option value="$PROJECT_DIR$/app/views/ads/search.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/widgets/_disqus.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/ads_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/ads/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
       </list>
     </option>
   </component>
@@ -848,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="115" selection-start="780" selection-end="791" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ads_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="28" selection-start="1435" selection-end="1444" vertical-scroll-proportion="0.0">
@@ -871,7 +864,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ads/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="36" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.6272727">
+        <state line="53" column="36" selection-start="1906" selection-end="1906" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="0.5586592">
           <folding />
         </state>
       </provider>
