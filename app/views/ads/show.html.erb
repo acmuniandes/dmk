@@ -4,7 +4,7 @@
 
     <div class="span4">
       <%= image_tag @ad.image,:class=> "thumbnail" %>
-      <% if @ad.images.size <= 0 %>
+      <% if @ad.images.size <= 0 && @is_owner %>
           <%= link_to new_ad_image_path(@ad),:class=>"btn btn-success" do %>
               <i class="icon-camera"></i> agregar imagenes
           <%end %>
