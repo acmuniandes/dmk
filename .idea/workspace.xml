@@ -28,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_footer.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="0.5586592">
+            <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
@@ -82,19 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="send_email.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_email.html.erb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="103" selection-start="189" selection-end="189" vertical-scroll-proportion="-1.25">
+            <state line="31" column="75" selection-start="939" selection-end="939" vertical-scroll-proportion="-8.541667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
+      <file leaf-file-name="_ad_thumbnail.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="45" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.75">
+            <state line="10" column="42" selection-start="401" selection-end="401" vertical-scroll-proportion="0.28462997">
               <folding />
             </state>
           </provider>
@@ -124,10 +124,8 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/users/me.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/ads.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/ads_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/ads/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/send_email.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ads/search.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
@@ -135,6 +133,8 @@
         <option value="$PROJECT_DIR$/app/controllers/ads_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/ads/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/ads/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb" />
       </list>
     </option>
   </component>
@@ -146,8 +146,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-744" />
+    <option name="x" value="-1301" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
     <option name="height" value="744" />
   </component>
@@ -686,7 +686,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-744" width="1301" height="744" extended-state="6" />
+    <frame x="-1301" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -792,20 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="984" selection-end="984" vertical-scroll-proportion="0.62827224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="45" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="103" selection-start="189" selection-end="189" vertical-scroll-proportion="-1.25">
@@ -871,7 +857,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="0.5586592">
+        <state line="20" column="69" selection-start="925" selection-end="925" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ads/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="75" selection-start="939" selection-end="939" vertical-scroll-proportion="-8.541667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ads/_ad_thumbnail.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="42" selection-start="401" selection-end="401" vertical-scroll-proportion="0.28462997">
           <folding />
         </state>
       </provider>

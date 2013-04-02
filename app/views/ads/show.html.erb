@@ -29,7 +29,7 @@
       </p>
 
       <p>
-        <span class="badge badge-warning">$<%= @ad.price %></span>
+        <span class="badge badge-warning"><%= number_to_currency(@ad.price) %></span>
           <p class="label label-info">
             <i class="icon-tag"></i><%= @ad.category.name %>
           </p>

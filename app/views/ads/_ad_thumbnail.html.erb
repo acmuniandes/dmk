@@ -8,7 +8,7 @@
       <h3 class="media-heading">
         <%= link_to ad.title, ad %>
       </h3>
-      <p> <%= ad.price %> </p>
+      <p> <%= number_to_currency(ad.price) %> </p>
       <% if edit_button then %>
           <div class="btn-group pull-right">
             <%= link_to  ad,:confirm=>"Estas seguro que deseas remover tu anuncio?",:method=>:delete, :class=>"btn" do %>
