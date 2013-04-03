@@ -38,3 +38,8 @@ $selectedBlue:#5f6f83;
   }
 }
 
+.center-image{
+  @extend .thumbnail;
+  width:100%
+}
+
