@@ -8,7 +8,7 @@ class Ad < ActiveRecord::Base
 
   def Ad.search(query)
 
-    return Ad.where("#{:title} LIKE '%#{query}%' OR #{:description} LIKE '%#{query}%'")
+    return Ad.where("#{:title} LIKE '%#{query}%' OR #{:description} LIKE '%#{query}%'").order(:created_at.to_s << " DESC")
 
   end
 
@@ -19,6 +19,10 @@ class Ad < ActiveRecord::Base
     else
       "http://placehold.it/400x400"
     end
+  end
+
+  def Ad.all
+    order(:created_at.to_s << " DESC")
   end
 
 end

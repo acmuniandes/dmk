@@ -29,13 +29,16 @@
         <b>Descripcion:</b>
         <%= @ad.description %>
       </p>
+      <%= render :partial => "ads/publicado_hace",:locals => {:ad => @ad} %>
       <span class="badge badge-warning"><%= number_to_currency(@ad.price) %></span>
       <p class="label label-info">
         <i class="icon-tag"></i><%= @ad.category.name %>
       </p>
       <br>
-      <%= render_modal_link "contact_modal","btn btn-primary" do %>
-        <i class="icon-envelope"></i> Contactar anunciante
+      <% if @is_owner == false then %>
+          <%= render_modal_link "contact_modal","btn btn-primary" do %>
+              <i class="icon-envelope"></i> Contactar anunciante
+          <% end %>
       <% end %>
 
       <%= render_modal "Contacto", "contact_modal" do %>

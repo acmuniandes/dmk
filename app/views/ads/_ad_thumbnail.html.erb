@@ -8,6 +8,7 @@
       <h3 class="media-heading">
         <%= link_to ad.title, ad %>
       </h3>
+      <%= render :partial => "ads/publicado_hace" , :locals => {:ad=>ad} %>
       <p> <%= number_to_currency(ad.price) %> </p>
       <% if edit_button then %>
           <div class="btn-group pull-right">
