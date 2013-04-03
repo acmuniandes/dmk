@@ -57,7 +57,8 @@
   <hr>
   <div class="row">
     <div class="span8 offset2" >
-      <%= render_disqus (request.fullpath) %>
+      <%= render_comments("http://clasificados.uniandes.edu.co"<<ad_path(@ad)) %>
+      <%#= render_disqus (request.fullpath) %>
     </div>
   </div>
   <%= link_to 'Back', "/" %>

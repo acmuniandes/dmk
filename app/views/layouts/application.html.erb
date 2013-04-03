@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <%= render_fb_load_api %>
@@ -13,8 +14,11 @@
 <div style="margin-top: 40px;">
   <%= render "layouts/alerts" %>
   <%= yield %>
-</div>
 
+</div>
+<div>
+  <%= render "layouts/alt_footer" %>
+</div>
 <%= render_uservoice %>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

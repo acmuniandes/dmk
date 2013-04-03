@@ -55,7 +55,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li class="nav-header">Categorias</li>
+              <li class="nav-header">Top 5 Categorias</li>
               <% Category.get_top(5).each do |c| %>
                   <li> <%= link_to c.name, c %></li>
               <% end %>

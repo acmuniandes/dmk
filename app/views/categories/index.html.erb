@@ -4,10 +4,17 @@
 <div class="container">
 
 
-    <ul class="nav nav-tabs nav-stacked">
-      <% @categories.each do |c|  %>
-          <li> <%= link_to c.name, c %> </li>
-      <% end %>
-    </ul>
+    <div class="row">
+      <div class="span8">
+        <ul class="nav nav-pills nav-stacked">
+          <% @categories.each do |c|  %>
+              <li> <%= link_to c.name, c %> </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="span4">
+        <%= render "widgets/helpful_links" %>
+      </div>
+    </div>
 
 </div>

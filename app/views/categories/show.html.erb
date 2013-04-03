@@ -2,7 +2,14 @@
 
 <div class="container">
 
-  <% @ads.each do |ad| %>
-      <%= render_ad ad %>
-  <% end  %>
+  <% if @ads.size > 0 %>
+      <% @ads.each do |ad| %>
+          <%= render_ad ad %>
+      <% end  %>
+  <% else %>
+    <h1>Lo sentimos</h1>
+    <p>No tenemos anuncios dentro de esta categoría todavía</p>
+    <p>¿Por qué no <%= link_to "publicas un anuncio", new_ad_path %> ?</p>
+    <p>¿Por qué no <%= link_to "le preguntas a algún amigo", "#" %>?</p>
+  <% end %>
 </div>

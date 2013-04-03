@@ -1,0 +1,39 @@
+//Colors
+$bodyBackground:	#E5EBE6;
+$textColor:	#000D11;
+$linkColor:	#5B8D96;
+
+// Margins
+$marginTop: 60px;
+$marginBottom: 40px;
+
+.alt-footer{
+  color: $bodyBackground;
+  background-color: $textColor;
+  margin-top: $marginTop;
+  padding-top: $marginTop;
+  padding-bottom: $marginBottom;
+  border-top: 8px solid $linkColor;
+  border-bottom: $marginBottom solid darken($textColor,15%);
+  h4{
+    color: $bodyBackground;
+  }
+  a{
+    color: $linkColor;
+    &:hover{
+      text-decoration: none;
+      color: $bodyBackground;
+    }
+  }
+  p{
+    margin: 2px;
+  }
+  .alt-footer-copy{
+    margin-top: $marginTop;
+  }
+}
+
+.navbar .brand{
+  font-family: Kreon;
+  text-shadow: 1px 1px rgb(91,141,150);
+}
