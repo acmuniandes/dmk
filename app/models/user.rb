@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
     return authorizations.first.uid
   end
 
+  def get_facebook_profile_url
+    return "http://facebook.com/#{get_fb_id}";
+  end
+
 end

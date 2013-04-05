@@ -1,5 +1,5 @@
 <h2>Hola <%= @user_receiver.name %></h2>
-<p>El usuario <i><%=@user_sender.name %></i>
+<p>El usuario <i><%= link_to @user_sender.name, @user_sender.get_facebook_profile_url %></i>
   te ha enviado un mensaje sobre tu anuncio:<%= link_to @ad.title, "http://clasificados.uniandes.edu.co"<<ad_path(@ad) %> </p>
 <div style="font: 14px/22px normal helvetica, sans-serif;
         margin-top: 10px;

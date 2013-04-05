@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "fernandohur@gmail.com"
+  default :from => "no-reply@woojah.com"
 
   #
   # This method is called when user_sender wants to contact user_receiver
@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
     @user_receiver = user_receiver
     @ad = ad
     @message = message
-    mail(:to => @user_receiver.email,:subject => "DOMKEE | te han contactado por un anuncio");
+    mail(:to => @user_receiver.email,:subject => "Clasifiteca | te han contactado por un anuncio");
   end
 
 
