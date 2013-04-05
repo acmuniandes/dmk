@@ -25,4 +25,8 @@ class Ad < ActiveRecord::Base
     order(:created_at.to_s << " DESC")
   end
 
+  def Ad.get_latest_in_category(category_id)
+    where("category_id=#{category_id}").order(:created_at.to_s<<" DESC")
+  end
+
 end
