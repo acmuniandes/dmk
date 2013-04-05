@@ -1,0 +1,6 @@
+  <ul class="nav nav-tabs nav-stacked">
+    <h4><i class="icon-tags"></i> Categorías</h4>
+    <% Category.all.each do |c|  %>
+        <li> <%= link_to c.name, c %> </li>
+    <% end %>
+  </ul>

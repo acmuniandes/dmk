@@ -5,7 +5,7 @@
       <%= form_tag "/search",:method=>"GET" , :class=> "search-box" do %>
 
           <h1>Busca un anuncio</h1>
-          <p class="muted">Busca anuncios de libros, calculadoras, monitorias, etc.</p>
+          <p class="muted">Busca anuncios de libros, calculadoras, monitor&iacute;as, etc.</p>
           <div class="input-append">
             <%= text_field_tag :query, nil, :class=>"input-xxlarge",:placeholder=>"buscar"  %>
             <button id="search" class="btn btn-primary"> buscar!</button>
@@ -19,18 +19,22 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="span4">
 
-    </div>
-  </div>
   <% if @ads then%>
 
       <div class="row">
-        <h4>Resultados para "<span class="muted"><%= request.params[:query] %></span>"</h4>
-        <% @ads.each do |ad| %>
-            <%= render_ad ad %>
-        <% end %>
+        <div class="row4">
+           <%#= render "categories/categories_widget" %>
+        </div>
+        <div class="offset1 span10" >
+          <h4>Resultados para "<span class="muted"><%= request.params[:query] %></span>"</h4>
+
+          <ul class="nav nav-tabs nav-stacked ads-thumbnail">
+            <% @ads.each do |ad| %>
+                <%= render_ad ad %>
+            <% end %>
+          </ul>
+        </div>
       </div>
 
       <script>
@@ -40,7 +44,7 @@
 
       </script>
   <% else %>
-      <fb:like href="http://clasificados.uniandes.edu.co" send="true" width="450" show_faces="false"></fb:like>
+      <fb:like href="http://clasificados.uniandes.edu.co" send="true"  show_faces="true"></fb:like>
       <%= render "layouts/footer" %>
   <% end %>
 

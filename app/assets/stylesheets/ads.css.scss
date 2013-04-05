@@ -42,4 +42,53 @@ $selectedBlue:#5f6f83;
   @extend .thumbnail;
   width:100%
 }
+.nav-tabs.nav-stacked > li{
+  background-color: #eeeeee;
+}
+
+.ads-thumbnail > li , .nav-tabs.nav-stacked> h4:first-child {
+  border: 1px solid #ddd;
+  border-bottom: 0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 8px;
+}
+
+.nav-tabs.nav-stacked > h4:first-child{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-color: #eeeeee;
+}
+
+/* line 4469, ../../app/assets/stylesheets/bootstrap_and_overrides.css.less */
+.nav-tabs.nav-stacked.ads-thumbnail > li:first-child,.nav-tabs.nav-stacked > h4:first-child {
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  border-top-left-radius: 8px;
+}
+
+/* line 4477, ../../app/assets/stylesheets/bootstrap_and_overrides.css.less */
+.nav-tabs.nav-stacked.ads-thumbnail > li:last-child  {
+  border: 1px solid #ddd;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.nav-tabs.nav-stacked > li:hover,
+.nav-tabs.nav-stacked > li:focus {
+  background-color: #f3f3f3;
+  z-index: 2;
+}
+
+h3 a:hover{
+  text-decoration: none;
+}
 

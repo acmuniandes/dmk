@@ -1,11 +1,21 @@
+<%= render_header "Anuncios recientes" , "mira los anuncios más recientes","icon-time" %>
 <div class="container">
-  <h1>Anuncios recientes</h1>
+   <div class="row">
+    <div class="span3">
+      <%= render "categories/categories_widget" %>
+    </div>
+    <div class="span8">
+      <ul class="nav nav-tabs nav-stacked ads-thumbnail">
+          <% @ads.each do |ad| %>
 
-  <% @ads.each do |ad| %>
-      <%= render_ad ad %>
-  <% end  %>
+
+              <%= render_ad ad %>
+
+          <% end  %>
+      </ul>
+    </div>
+  </div>
 
 
-  <%= link_to 'New Ad', new_ad_path %>
 
 </div>

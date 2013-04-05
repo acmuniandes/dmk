@@ -2,12 +2,15 @@
 <% days_ago = (Time.zone.now - ad.created_at ).to_i / 1.day %>
 <% hours_ago = (Time.zone.now - ad.created_at ).to_i / 1.hour %>
 <% minutes_ago = (Time.zone.now - ad.created_at ).to_i / 1.minute %>
-<% if minutes_ago == 0 %>
-    <p>Publicado hace un instante</p>
-<% elsif hours_ago == 0 %>
-    <p>Publicado hace  <%= pluralize(minutes_ago,"minuto","minutos") %></p>
-<% elsif days_ago == 0%>
-    <p>Publicado hace  <%= pluralize(hours_ago,"hora","horas") %></p>
-<% else %>
-    <p>Publicado hace  <%= pluralize(days_ago,"dia","dias") %></p>
-<% end %>
+<p class="muted">hace
+    <% if minutes_ago == 0 %>
+        un instante
+    <% elsif hours_ago == 0 %>
+        <%= pluralize(minutes_ago,"minuto","minutos") %>
+    <% elsif days_ago == 0%>
+        <%= pluralize(hours_ago,"hora","horas") %>
+    <% else %>
+        <%= pluralize(days_ago,"dia","dias") %>
+    <% end %>
+  por <%= link_to ad.user.name ,"http://facebook.com/#{ad.user.authorizations.first.uid}",:target=>"_blank" %>
+</p>

@@ -7,15 +7,19 @@
 <div class="container">
   <div class="row" >
     <div class="span8">
-      <% @user.ads.each do |ad| %>
-          <%= render_ad ad, true %>
-      <% end %>
+      <ul class="nav nav-tabs nav-stacked ads-thumbnail">
+        <% @user.ads.each do |ad| %>
 
+            <%= render_ad ad, true %>
+
+        <% end %>
+      </ul>
     </div>
-    <div class="span4 text-center">
-
-      <%= image_tag @user.get_fb_picture(400),:class=>"img-rounded" %>
-      <h1>Hola <%= @user.name %> </h1>
+    <div class="span4">
+      <div class="user-image">
+        <%= image_tag @user.get_fb_picture(400),:class=>"img-rounded" %>
+        <h1>Hola <%= @user.name %> </h1>
+      </div>
     </div>
 
   </div>

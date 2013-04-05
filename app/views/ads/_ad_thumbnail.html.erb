@@ -1,14 +1,17 @@
 <% #TODO add paging support %>
-<div class="well well-small">
+<li>
   <div class="media">
     <a href="<%= ad_path(ad) %>">
       <%= image_tag ad.image ,:class=>"media-object pull-left thumbnail",:style => "max-height:100px; margin-right:5px" %>
     </a>
     <div class="media-body">
+      <div class="pull-right">
+        <%= render :partial => "ads/publicado_hace" , :locals => {:ad=>ad} %>
+      </div>
       <h3 class="media-heading">
         <%= link_to ad.title, ad %>
       </h3>
-      <%= render :partial => "ads/publicado_hace" , :locals => {:ad=>ad} %>
+
       <p> <%= number_to_currency(ad.price) %> </p>
       <% if edit_button then %>
           <div class="btn-group pull-right">
@@ -27,4 +30,4 @@
       <p class="label label-info"> <%= ad.category.name %></p>
     </div>
   </div>
-</div>
+</li>
