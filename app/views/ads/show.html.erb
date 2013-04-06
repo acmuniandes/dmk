@@ -35,7 +35,7 @@
         <i class="icon-tag"></i><%= @ad.category.name %>
       </p>
       <br>
-      <% if @is_owner then %>
+      <% if @is_owner == false then %>
           <%= render_modal_link "contact_modal","btn btn-primary" do %>
               <i class="icon-envelope"></i> Contactar anunciante
           <% end %>
