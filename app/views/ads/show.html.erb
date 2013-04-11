@@ -6,7 +6,7 @@
       <div >
         <%= image_tag @ad.image,:class=> "center-image" %>
       </div>
-      <% if @ad.images.size <= 0 && @is_owner %>
+      <% if @is_owner %>
           <%= link_to new_ad_image_path(@ad),:class=>"btn btn-success" do %>
               <i class="icon-camera"></i> agregar imagenes
           <%end %>
@@ -35,7 +35,7 @@
         <i class="icon-tag"></i><%= @ad.category.name %>
       </p>
       <br>
-      <% if @is_owner == false then %>
+      <% if @is_owner == false && is_signed_in then %>
           <%= render_modal_link "contact_modal","btn btn-primary" do %>
               <i class="icon-envelope"></i> Contactar anunciante
           <% end %>
