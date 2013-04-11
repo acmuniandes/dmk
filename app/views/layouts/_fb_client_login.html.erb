@@ -10,17 +10,18 @@
     function login() {
         FB.login(function(response) {
 
-            $('#modallogin').modal('show');
 
             if (response.authResponse) {
-                FB.api('/me', function(response) {
+                FB.api('/me', function(resp) {
+                    $('#modallogin').modal('show');
+                    var uid = resp.id;
+                    var name = resp.first_name;
+                    var email = resp.email;
+                    if (resp!=null){
+                        $.post('client_auth',{uid: uid, name: name, email: email}, function(){
 
-                    var uid = response.id
-                    var name = response.first_name
-                    var email = response.email
-                    $.post('client_auth',{uid: uid, name: name, email: email}, function(){
-                        window.location = '/me';
-                    });
+                        }).done(function() {  window.location = '/me';; });
+                    }
                 });
             } else {
                 alert("Login failed");
