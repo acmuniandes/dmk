@@ -1,10 +1,17 @@
 <a href="#" onclick="login()">
   <i class="icon-facebook-sign"></i> login
 </a>
+<%= render_modal "Iniciando session","login" do %>
+    <h2>Iniciando session</h2>
+    <p>Por favor espera unos segundos</p>
+<% end %>
 <script>
 
     function login() {
         FB.login(function(response) {
+
+            $('#modallogin').modal('show');
+
             if (response.authResponse) {
                 FB.api('/me', function(response) {
 
@@ -12,7 +19,7 @@
                     var name = response.first_name
                     var email = response.email
                     $.post('client_auth',{uid: uid, name: name, email: email}, function(){
-                        window.location = '/me'
+                        window.location = '/me';
                     });
                 });
             } else {

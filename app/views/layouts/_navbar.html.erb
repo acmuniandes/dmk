@@ -1,4 +1,4 @@
-<% user_id = get_user_id(request) %>
+<% user_id = get_user_id() %>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -10,9 +10,6 @@
       <%= link_to "/" , :class=>"brand" do %>
           Clasifi<span>Teca</span> <small style="font-size: 15px;"> beta </small>
       <% end %>
-      <%= link_to "http://acm.uniandes.edu.co" do %>
-          <%= image_tag "acm.png" ,:class=>"pull-right",:style=>"margin-top: 10px",:alt=>"ACM - UNIANDES" %>
-      <%end%>
       <div class="nav-collapse collapse">
 
         <ul class="nav">
