@@ -30,17 +30,17 @@
             <%= f.text_area :description,:size=>"5x5",:placeholder=>"Agrega una corta descripcción para tu anuncio." %>
           </div>
         </div>
-        <div class="control-group">
-          <%= f.label :image,"Imagen",:class=>"control-label" %>
+        <!--<div class="control-group">
+          <%#= f.label :image,"Imagen",:class=>"control-label" %>
           <div class="controls">
-            <%= f.hidden_field :image %>
+            <%#= f.hidden_field :image %>
             <div id="loading-bar" class="progress progress-striped active input-large">
               <div class="bar" style="width: 100%;"></div>
             </div>
           </div>
 
           <div id="results"></div>
-        </div>
+        </div>-->
         <div class="control-group">
           <%= f.label :price,"Precio",:class=>"control-label" %>
           <div class="controls">
@@ -54,6 +54,14 @@
             <%= select_tag :category, options_from_collection_for_select(@categories, "id", "name"), :multiple=>false  %>
           </div>
         </div>
+
+        <div class="control-group">
+          <%= label_tag :fb,"Publicar en mi wall de facebook",:class=>"control-label" %>
+          <div class="controls">
+            <%= check_box_tag :fb, 0 %>
+          </div>
+        </div>
+
         <div class="control-group">
           <div class="controls">
             <%= f.submit "Publicar",:class=>"btn btn-primary" %>
@@ -69,7 +77,7 @@
 <script>
     $('#loading-bar').hide();
     $('#ad_title').bind('change',function(){
-        var data = {query: $('#ad_title').val() }
+        var data = {query: $('#ad_title').val() };
         $('#results').empty();
         $('#loading-bar').show();
         $.getJSON('/get_images', data, function(obj)
@@ -87,8 +95,8 @@
                 $('.img-rounded').click(data,function(){
                     $('.img-rounded').removeClass('selected');
                     $(this).addClass('selected');
-                    var src=$(this).attr('src')
-                    $('#ad_image').val(src)
+                    var src=$(this).attr('src');
+                    $('#ad_image').val(src);
                 });
             }
         });
@@ -110,6 +118,17 @@
         $(a).append(i);
         // Append the anchor tag and paragraph with the title to the results div.
         $('#results').append(i);
+    }
+
+    function updateStatus(){
+        var status  =   document.getElementById('#ad_title').value;
+        FB.api('/me/feed', 'post', { message: status }, function(response) {
+            if (!response || response.error) {
+                alert('Error occured');
+            } else {
+                alert('Status updated Successfully');
+            }
+        });
     }
 
 </script>
