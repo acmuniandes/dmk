@@ -20,29 +20,34 @@
 
 <div class="container">
 
-  <% if @ads then%>
-
-      <div class="row">
-        <div class="row4">
-           <%#= render "categories/categories_widget" %>
-        </div>
-        <div class="offset1 span10" >
-          <h4>Resultados para "<span class="muted"><%= request.params[:query] %></span>"</h4>
-
-          <ul class="nav nav-tabs nav-stacked ads-thumbnail">
-            <% @ads.each do |ad| %>
-                <%= render_ad ad %>
-            <% end %>
+  <% if @ads%>
+    <% if @ads.size == 0 %>
+        <h2>Lo sentimos, no hemos encontrados resultados para "<span class="muted"><%= request.params[:query] %></span>"</h2>
+        <h4>Tal vez querrías</h4>
+          <ul>
+            <li> ¿<%= link_to "Crear un anuncio", new_ad_path %>? </li>
+            <li> ¿Preguntarle a tus amigos? </li>
           </ul>
-        </div>
-      </div>
+    <% else %>
+          <div class="row">
+            <div class="offset1 span10" >
+              <h4>Resultados para "<span class="muted"><%= request.params[:query] %></span>"</h4>
 
-      <script>
+              <ul class="nav nav-tabs nav-stacked ads-thumbnail">
+                <% @ads.each do |ad| %>
+                    <%= render_ad ad %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
 
-          $('.hero-unit').animate({ paddingTop: 10, paddingBottom:10},500);
-          $(".search-box").animate({ marginTop: 10, marginBottom:10},500);
+          <script>
 
-      </script>
+              $('.hero-unit').animate({ paddingTop: 10, paddingBottom:10},500);
+              $(".search-box").animate({ marginTop: 10, marginBottom:10},500);
+
+          </script>
+    <% end %>
   <% else %>
       <fb:like href="http://clasificados.uniandes.edu.co" send="true"  show_faces="true"></fb:like>
       <%= render "layouts/footer" %>

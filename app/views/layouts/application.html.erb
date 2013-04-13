@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-  <title>Clasifiteca | La comunidad Uniandina para intercambio de materiales universitarios</title>
+  <%h title = yield(:title) %>
+
+  <title> <%= if title then title else "Clasifiteca | La comunidad Uniandina para intercambio de materiales universitarios" end  %> </title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>

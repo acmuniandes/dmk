@@ -11,15 +11,21 @@ class User < ActiveRecord::Base
   #<i>width</i> is the width of the picture
   #
   def get_fb_picture(width=30)
-    return "https://graph.facebook.com/#{authorizations.first.uid}/picture?width=#{width}"
+    "https://graph.facebook.com/#{authorizations.first.uid}/picture?width=#{width}"
   end
 
+  #
+  #  Returns the facebook id of the current user
+  #
   def get_fb_id
-    return authorizations.first.uid
+    authorizations.first.uid
   end
 
+  #
+  # Returns the facebook profile url of the current user
+  #
   def get_facebook_profile_url
-    return "http://facebook.com/#{get_fb_id}";
+    "http://facebook.com/#{get_fb_id}"
   end
 
 end

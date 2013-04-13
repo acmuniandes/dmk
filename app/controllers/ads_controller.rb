@@ -1,6 +1,3 @@
-require 'net/https'
-require 'uri'
-
 class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
@@ -20,7 +17,6 @@ class AdsController < ApplicationController
     if params[:query] and params[:query].size  > 0 then
       @ads = Ad.search(params[:query])
     end
-    @topCategories = Category.get_top(20)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @results }
@@ -142,33 +138,7 @@ class AdsController < ApplicationController
 
   def get_images
 
-
-
-
-    query=params[:query]
-    query=URI.escape(query)
-    limit=10
-    u = '5MoQWsdQ6EbW78VA8YhsS1snfI6YIvbOMTzoVT+GXqs='
-    url="api.datamarket.azure.com"
-    puts "opening #{url}"
-    http = Net::HTTP.new(url,443)
-
-    http.use_ssl = true
-
-
-
-    http.start do |http|
-
-      req = Net::HTTP::Get.new("/Data.ashx/Bing/Search/v1/Image?Query=%27#{query}%27&$top=10&$format=JSON")
-
-      # we make an HTTP basic auth by passing the
-      # username and password
-      puts "request req"
-      req.basic_auth u, u
-
-      @resp = http.request(req)
-
-    end
+    @resp = BingAPI.get_images(params[:query],10)
 
     respond_to do |format|
       format.json {render json: @resp.body}
@@ -181,7 +151,7 @@ class AdsController < ApplicationController
     ad = Ad.find(params[:id])
     user_sender = User.find(session[:user_id])
     user_receiver = User.find(ad.user)
-    UserMailer.send_email(user_sender, user_receiver,ad,message).deliver;
+    UserMailer.send_email(user_sender, user_receiver,ad,message).deliver
     render text: "mensaje enviado exitosamente"
   end
 
