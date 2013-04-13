@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+function fbLogin() {
+    FB.login(onLogin,{scope: 'email'});
+}
+
+function onLogin(response) {
+
+
+    if (response.authResponse) {
+        FB.api('/me', function(resp) {
+            $('#modallogin').modal('show');
+            var uid = resp.id;
+            var name = resp.first_name;
+            var email = resp.email;
+            if (resp!=null){
+                $.post('/client_auth',{uid: uid, name: name, email: email}, function(){
+
+                }).done(function() {  window.location.href = '/me'; });
+            }
+        });
+    } else {
+        alert("Login failed");
+    }
+}
