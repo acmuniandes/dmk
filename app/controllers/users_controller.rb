@@ -22,11 +22,16 @@ class UsersController < ApplicationController
   end
 
   def me
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
+    else
+      flash[:notice]="Please log-in first"
+      redirect_to "/"
     end
   end
 

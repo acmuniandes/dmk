@@ -38,10 +38,14 @@ class AdsController < ApplicationController
     end
   end
 
+  def home
+
+  end
+
   # GET /ads/new
   # GET /ads/new.json
   def new
-    if session[:user_id] then
+    if session[:user_id]
       @ad = Ad.new
       @categories = Category.all
       respond_to do |format|
@@ -55,30 +59,39 @@ class AdsController < ApplicationController
 
   # GET /ads/1/edit
   def edit
-    @ad = Ad.find(params[:id])
-    @topCategories = Category.all
+    if session[:user_id]
+
+      @ad = Ad.find(params[:id])
+      @topCategories = Category.all
+    else
+      send_to_fb_login
+    end
   end
 
   # POST /ads
   # POST /ads.json
   def create
-    @ad = Ad.new(params[:ad])
-    if !@ad.image || @ad.image==""
-      @ad.image = "http://placehold.it/400x400"
-    end
-    @ad.user_id=session[:user_id]
-    @ad.category_id= params[:category]
-    respond_to do |format|
-      if @ad.save
-        flash[:success]="Anuncio exitosamente creado"
-        format.html { redirect_to @ad }
-        format.json { render json: @ad, status: :created, location: @ad }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-
-
+    if session[:user_id]
+      @ad = Ad.new(params[:ad])
+      if !@ad.image || @ad.image==""
+        @ad.image = "http://placehold.it/400x400"
       end
+      @ad.user_id=session[:user_id]
+      @ad.category_id= params[:category]
+      respond_to do |format|
+        if @ad.save
+          flash[:success]="Anuncio exitosamente creado"
+          format.html { redirect_to @ad }
+          format.json { render json: @ad, status: :created, location: @ad }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @ad.errors, status: :unprocessable_entity }
+
+
+        end
+      end
+    else
+      send_to_fb_login
     end
   end
 
@@ -87,32 +100,44 @@ class AdsController < ApplicationController
   def update
     @ad = Ad.find(params[:id])
 
-    respond_to do |format|
-      if @ad.update_attributes(params[:ad])
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
+    if @ad.user_id==session[:user_id]
+      respond_to do |format|
+        if @ad.update_attributes(params[:ad])
+          format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @ad.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      send_to_fb_login
     end
   end
 
   # DELETE /ads/1
   # DELETE /ads/1.json
   def destroy
-    @ad = Ad.find(params[:id])
-    @ad.destroy
 
-    respond_to do |format|
-      format.html { redirect_to "/me" }
-      format.json { head :no_content }
+    @ad = Ad.find(params[:id])
+
+    if @ad.user_id == session[:user_id]
+      @ad.destroy
+
+      respond_to do |format|
+        format.html { redirect_to "/me" }
+        format.json { head :no_content }
+      end
+    else
+      send_to_fb_login
     end
+
   end
 
 
   def send_to_fb_login
-    redirect_to "/auth/facebook"
+    flash[:notice] = "Please log-in first"
+    redirect_to "/"
   end
 
   def get_images
