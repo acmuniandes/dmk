@@ -2,7 +2,7 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.all
+    @ads = Ad.order('created_at DESC').page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

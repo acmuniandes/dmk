@@ -5,6 +5,7 @@ class Ad < ActiveRecord::Base
   # TODO: cambiar el tipo de dato de :price a un string, para que el usuario pueda escribir 15/mes o algo asi
 
   has_many :images
+  self.per_page = 20
 
   def Ad.search(query)
 
