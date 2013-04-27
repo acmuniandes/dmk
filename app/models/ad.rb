@@ -2,9 +2,8 @@ class Ad < ActiveRecord::Base
   attr_accessible :description, :price, :title,:category_id
   belongs_to :user
   belongs_to :category
-  # TODO: cambiar el tipo de dato de :price a un string, para que el usuario pueda escribir 15/mes o algo asi
-
   has_many :images
+
   self.per_page = 20
 
   def Ad.search(query)
@@ -26,8 +25,8 @@ class Ad < ActiveRecord::Base
     order(:created_at.to_s << " DESC")
   end
 
-  def Ad.get_latest_in_category(category_id)
-    where("category_id=#{category_id}").order(:created_at.to_s<<" DESC")
+  def Ad.get_latest_in_category(category_id, page)
+    where("category_id=#{category_id}").order('created_at DESC').page(page)
   end
 
 end

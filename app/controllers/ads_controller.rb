@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+
   # GET /ads
   # GET /ads.json
   def index

@@ -5,6 +5,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id]) ;
-    @ads = Ad.get_latest_in_category(@category.id)
+    @ads = Ad.get_latest_in_category(@category.id, params[:page])
   end
 end

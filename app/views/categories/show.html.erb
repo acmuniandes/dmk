@@ -8,6 +8,7 @@
             <%= render_ad ad %>
         <% end  %>
       </ul>
+      <%= will_paginate @ads %>
   <% else %>
       <h1>Lo sentimos</h1>
       <p>No tenemos anuncios dentro de esta categoría todavía</p>
