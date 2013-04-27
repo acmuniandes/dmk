@@ -27,7 +27,9 @@
           </div>
 
       <% end %>
-      <p class="label label-info"> <%= ad.category.name %></p>
+      <%= link_to ad.category do %>
+        <p class="label label-info"> <%= ad.category.name %> </p>
+      <% end %>
     </div>
   </div>
 </li>
