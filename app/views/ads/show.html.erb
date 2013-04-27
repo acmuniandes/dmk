@@ -29,7 +29,7 @@
 
       <p>
         <b>Descripción:</b>
-        <%= @ad.description %>
+        <%=  simple_format(@ad.description) %>
       </p>
       <%= render :partial => "ads/publicado_hace",:locals => {:ad => @ad} %>
       <span class="badge badge-warning"><%= number_to_currency(@ad.price) %></span>
