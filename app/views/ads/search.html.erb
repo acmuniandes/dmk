@@ -13,13 +13,31 @@
 
 
       <% end %>
+
     </div>
   </div>
 
 </div>
 
 <div class="container">
-
+  <% unless @ads %>
+      <div class="row">
+        <% @categories.each_with_index do |c,i| %>
+            <% ad = c.ads.last %>
+            <div class="span3">
+              <div class="category-preview">
+                <h4><%= link_to c.name, c %></h4>
+                <%= image_tag ad.image %>
+                <p>
+                  <b><%= ad.title %></b>
+                  <small><%= ad.description[0..50] << '...' %></small>
+                </p>
+                <%= link_to "más", c %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
   <% if @ads%>
     <% if @ads.size == 0 %>
         <h2>Lo sentimos, no hemos encontrados resultados para "<span class="muted"><%= request.params[:query] %></span>"</h2>

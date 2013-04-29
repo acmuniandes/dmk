@@ -15,7 +15,8 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def search
-    if params[:query] and params[:query].size  > 0 then
+    @categories = Category.get_top(4)
+    if params[:query] and params[:query].size > 0 then
       @ads = Ad.search(params[:query])
     end
     respond_to do |format|

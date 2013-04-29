@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap_and_overrides.css.less";
-$selectedBlue:#5f6f83;
+
 
 .search-box{
   text-align: center;
@@ -26,11 +26,11 @@ $selectedBlue:#5f6f83;
 
 
 .selected{
-  border: 2px solid $selectedBlue;
+  border: 2px solid @linkColor;
 }
 
 .tiny-image-link{
-  @extend .thumbnail;
+  .thumbnail;
   float: left;
   max-height: 50px;
   img{
@@ -39,7 +39,7 @@ $selectedBlue:#5f6f83;
 }
 
 .center-image{
-  @extend .thumbnail;
+  .thumbnail;
   width:100%
 }
 .nav-tabs.nav-stacked > li{
@@ -94,5 +94,43 @@ h3 a:hover{
 
 input{
   background-color: transparent;
+}
+
+.category-preview{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+  width: 100%;
+  margin-bottom: 5px;
+  a{
+    width: 100%;
+  }
+  img{
+    max-height: 200px;
+    display: block;   margin-left: auto;   margin-right: auto;
+  }
+
+}
+
+
+.category-preview > h4:first-child{
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0px;
+}
+.category-preview > p{
+  padding: 10px;
+}
+.category-preview > a{
+  .btn;
+  .btn-primary;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: -1px;
+  padding: 4px 0px;
+  border: 1px solid #ddd;
 }
 
