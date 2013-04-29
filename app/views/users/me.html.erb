@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row" >
-    <div class="span8">
+    <div class="span9">
       <ul class="nav nav-tabs nav-stacked ads-thumbnail">
         <% @user.ads.each do |ad| %>
 
@@ -15,7 +15,7 @@
         <% end %>
       </ul>
     </div>
-    <div class="span4">
+    <div class="span3">
       <div class="user-image">
         <%= image_tag @user.get_fb_picture(400),:class=>"img-rounded" %>
         <h1>Hola <%= @user.name %> </h1>
