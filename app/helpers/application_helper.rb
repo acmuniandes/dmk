@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def render_modal(title, modal_id, &block)
-    render :partial => "widgets/bootstrap/modal" , :locals => {:title => title,:modal_id=>modal_id,:content=>capture(&block)}
+    render :partial => "widgets/bootstrap/modal" , :locals => {:title => title,:modal_id=>modal_id, :content=>capture(&block)}
   end
 
   def render_modal_link(modal_id, class_name="tiny-image-link",&block)

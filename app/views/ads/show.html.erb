@@ -13,15 +13,10 @@
               <i class="icon-camera"></i> agregar imagenes
           <%end %>
       <% end %>
-      <% @ad.images.each do |i|  %>
-
-          <%= render_modal_link i.id do %>
-              <%= image_tag "/#{i.url}" %>
-          <% end %>
-          <%= render_modal @ad.title, i.id do %>
-              <%= image_tag "/#{i.url}", :style=>"margin-left:auto;margin-right:auto;" %>
-              <p><%= i.title %></p>
-          <% end  %>
+      <% @ad.images.each_with_index do |i,index|  %>
+          <a href="#modal_carousel" role="button" class="tiny-image-link" data-toggle="modal" onclick="$('.item:nth-child(<%=index+1%>)').attr('class','item active');">
+            <%= image_tag "/#{i.url}" %>
+          </a>
       <% end %>
     </div>
     <div class="span8">
@@ -56,21 +51,57 @@
     </div>
   </div>
   <hr>
+  <!-- The facebook like widget -->
   <div class="row">
     <div class="span12">
       <%= render_standard_like("http://clasificados.uniandes.edu.co"<<ad_path(@ad)) %>
     </div>
   </div>
   <hr>
+  <!-- The facebook comments widget -->
   <div class="row">
     <div class="span12" >
       <%= render_comments("http://clasificados.uniandes.edu.co"<<ad_path(@ad)) %>
-      <%#= render_disqus (request.fullpath) %>
     </div>
   </div>
 
 </div>
 
+<!-- The carousel inside a modal -->
+<!-- Modal -->
+<div id="modal_carousel" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+style="width:80%;margin-left: -40%;">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Imágenes</h3>
+  </div>
+  <div class="modal-body" style="min-height: 300px">
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <% @ad.images.each_with_index do |img,index| %>
+            <li data-target="#myCarousel" data-slide-to="<%= index %>" class="active"></li>
+        <% end %>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <% @ad.images.each do |i| %>
+            <div class="item">
+              <%= image_tag "/#{i.url}", :style=>'display: block;   margin-left: auto;   margin-right: auto;' %>
+              <p><%= i.title %></p>
+            </div>
+        <% end %>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+<!-- The script that sends the e-mail -->
 <script>
 
     $('#btnSend').click(function(){
