@@ -19,3 +19,4 @@
 
 #ignore uploads
 /public/uploads
+.idea
