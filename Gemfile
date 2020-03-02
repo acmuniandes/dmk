@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 #TODO change rails 3.2.11 to 4.0
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.17'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
